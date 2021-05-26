@@ -22,7 +22,29 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapAdd() {
-        // show add controller
+        
+        guard let vc = storyboard?.instantiateViewController(identifier: "add") as? AddViewController else {
+            return
+        }
+        
+        vc.title = "New Reminder"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        vc.completion = { [self] title, body, date in
+            
+            DispatchQueue.main.async {
+                
+                let uuid = UUID().uuidString
+                let newReminder = Reminder(title: title, date: date, identifier: "reminder_\(uuid)")
+                
+                navigationController?.popToRootViewController(animated: true)
+                models.append(newReminder)
+                table.reloadData()
+                
+                notify(id: newReminder.identifier, title: title, body: body, date: date)
+            }
+        }
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func didTapTest() {
@@ -42,23 +64,22 @@ class ViewController: UIViewController {
                 })
     }
     
-    func scheduleTest() {
+    func notify(id: String, title: String, body: String, date: Date) {
         
         let content = UNMutableNotificationContent()
-        content.title = "Hello!"
+        content.title = title
         content.sound = .default
-        content.body = "A body text"
+        content.body = body
         
-        let targetDate = Date().addingTimeInterval(10)
         let trigger = UNCalendarNotificationTrigger(
             dateMatching: Calendar.current.dateComponents(
                 [.year, .month, .day, .hour, .minute, .second],
-                from: targetDate
+                from: date
             ),
             repeats: false
         )
         
-        let request = UNNotificationRequest(identifier: "some_id", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
             
@@ -66,6 +87,12 @@ class ViewController: UIViewController {
                 print("Error")
             }
         })
+    }
+    
+    func scheduleTest() {
+        
+        let targetDate = Date().addingTimeInterval(10)
+        notify(id: "test_id", title: "Hello World!", body: "A very long message.", date: targetDate)
     }
 }
 
@@ -87,8 +114,14 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let date = models[indexPath.row].date
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMM YYYY"
         cell.textLabel?.text = models[indexPath.row].title
+        cell.detailTextLabel?.text = formatter.string(from: date)
+        
         return cell
     }
 }
