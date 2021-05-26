@@ -5,6 +5,7 @@
 //  Created by Randell Quitain on 26/5/21.
 //
 
+import UserNotifications
 import UIKit
 
 class ViewController: UIViewController {
@@ -25,7 +26,46 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapTest() {
-        // fire test notificatioon
+        
+        UNUserNotificationCenter
+            .current()
+            .requestAuthorization(
+                options: [.alert, .badge, .sound],
+                completionHandler: { [self] success, error in
+                    
+                    if success {
+                        scheduleTest()
+                    }
+                    else if let error = error {
+                        print("Error: \(error.localizedDescription)")
+                    }
+                })
+    }
+    
+    func scheduleTest() {
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Hello!"
+        content.sound = .default
+        content.body = "A body text"
+        
+        let targetDate = Date().addingTimeInterval(10)
+        let trigger = UNCalendarNotificationTrigger(
+            dateMatching: Calendar.current.dateComponents(
+                [.year, .month, .day, .hour, .minute, .second],
+                from: targetDate
+            ),
+            repeats: false
+        )
+        
+        let request = UNNotificationRequest(identifier: "some_id", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
+            
+            if error != nil {
+                print("Error")
+            }
+        })
     }
 }
 
