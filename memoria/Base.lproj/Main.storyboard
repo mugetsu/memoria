@@ -57,11 +57,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reminders" id="mXT-vy-DVQ">
-                        <barButtonItem key="leftBarButtonItem" title="Test" id="VqJ-fb-uV1">
-                            <connections>
-                                <action selector="didTapTest" destination="BYZ-38-t0r" id="iAX-xH-MsT"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Iif-CL-RLS">
                             <connections>
                                 <action selector="didTapAdd" destination="BYZ-38-t0r" id="LcI-SG-RKt"/>

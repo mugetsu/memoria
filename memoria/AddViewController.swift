@@ -13,7 +13,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var bodyField: UITextField!
     @IBOutlet var datePicker: UIDatePicker!
     
-    public var completion: ((String, String, Date) -> Void)?
+    public var completion: ((String, String, String, Date) -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +25,22 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     
     @objc func didTapSave() {
         
+        let uuid = UUID().uuidString.replacingOccurrences(of: "-", with: "")
+        let id = "reminder_\(uuid)"
+        
         if let titleText = titleField.text, !titleText.isEmpty,
            let bodyText = bodyField.text, !bodyText.isEmpty {
             
             let targetDate = datePicker.date
             
-            completion?(titleText, bodyText, targetDate)
+            PostService.shared.setNewReminder(
+                id: id,
+                title: titleText,
+                body: bodyText,
+                date: targetDate.timeIntervalSince1970
+            )
+            
+            completion?(id, titleText, bodyText, targetDate)
         }
     }
     

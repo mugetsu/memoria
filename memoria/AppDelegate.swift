@@ -6,14 +6,24 @@
 //
 
 import UIKit
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         // Override point for customization after application launch.
+        
+        FirebaseApp.configure()
+        
+        PostService.shared.setRef(url: Bundle.main.infoDictionary?["FIREBASE_URL"] as! String)
+        
+        let deviceId = UIDevice.current.identifierForVendor?.uuidString
+        let id = deviceId?.replacingOccurrences(of: "-", with: "") ?? ""
+        
+        PostService.shared.setUser(uuid: id)
+        
         return true
     }
 

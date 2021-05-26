@@ -29,39 +29,21 @@ class ViewController: UIViewController {
         
         vc.title = "New Reminder"
         vc.navigationItem.largeTitleDisplayMode = .never
-        vc.completion = { [self] title, body, date in
+        vc.completion = { [self] id, title, body, date in
             
             DispatchQueue.main.async {
                 
-                let uuid = UUID().uuidString
-                let newReminder = Reminder(title: title, date: date, identifier: "reminder_\(uuid)")
+                let newReminder = Reminder(id: id, title: title, body: body, date: date)
                 
                 navigationController?.popToRootViewController(animated: true)
                 models.append(newReminder)
                 table.reloadData()
                 
-                notify(id: newReminder.identifier, title: title, body: body, date: date)
+                notify(id: newReminder.id, title: title, body: body, date: date)
             }
         }
         
         navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    @IBAction func didTapTest() {
-        
-        UNUserNotificationCenter
-            .current()
-            .requestAuthorization(
-                options: [.alert, .badge, .sound],
-                completionHandler: { [self] success, error in
-                    
-                    if success {
-                        scheduleTest()
-                    }
-                    else if let error = error {
-                        print("Error: \(error.localizedDescription)")
-                    }
-                })
     }
     
     func notify(id: String, title: String, body: String, date: Date) {
@@ -87,12 +69,6 @@ class ViewController: UIViewController {
                 print("Error")
             }
         })
-    }
-    
-    func scheduleTest() {
-        
-        let targetDate = Date().addingTimeInterval(10)
-        notify(id: "test_id", title: "Hello World!", body: "A very long message.", date: targetDate)
     }
 }
 
@@ -127,7 +103,8 @@ extension ViewController: UITableViewDataSource {
 }
 
 struct Reminder {
+    let id: String
     let title: String
+    let body: String
     let date: Date
-    let identifier: String
 }
