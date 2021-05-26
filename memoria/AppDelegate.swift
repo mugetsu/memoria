@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
-        PostService.shared.setRef(url: Bundle.main.infoDictionary?["FIREBASE_URL"] as! String)
+        PostService.shared.setRef(url: ProcessInfo.processInfo.environment["FIREBASE_URL"] ?? "")
         
         let deviceId = UIDevice.current.identifierForVendor?.uuidString
         let id = deviceId?.replacingOccurrences(of: "-", with: "") ?? ""

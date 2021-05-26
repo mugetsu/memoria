@@ -16,7 +16,6 @@
 		309BDABF265E2BE5006CE11B /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309BDABE265E2BE5006CE11B /* AddViewController.swift */; };
 		30B24A96265E4ABC00BF2D29 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B24A95265E4ABC00BF2D29 /* PostService.swift */; };
 		30B24A9A265E541C00BF2D29 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30B24A99265E541C00BF2D29 /* GoogleService-Info.plist */; };
-		30B24A9C265E662100BF2D29 /* Local.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 30B24A9B265E662100BF2D29 /* Local.xcconfig */; };
 		8B129B8636A1722D2B22C979 /* Pods_memoria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15FDEF695719798880B48B56 /* Pods_memoria.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +33,6 @@
 		309BDABE265E2BE5006CE11B /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		30B24A95265E4ABC00BF2D29 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		30B24A99265E541C00BF2D29 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		30B24A9B265E662100BF2D29 /* Local.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Local.xcconfig; sourceTree = "<group>"; };
 		4162C44A68D067DD288E57F4 /* Pods-memoria.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memoria.debug.xcconfig"; path = "Target Support Files/Pods-memoria/Pods-memoria.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,7 +79,6 @@
 				30B24A99265E541C00BF2D29 /* GoogleService-Info.plist */,
 				301179F5265E2738006ACBD7 /* Info.plist */,
 				309BDABE265E2BE5006CE11B /* AddViewController.swift */,
-				30B24A9B265E662100BF2D29 /* Local.xcconfig */,
 			);
 			path = memoria;
 			sourceTree = "<group>";
@@ -171,7 +168,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				301179F4265E2738006ACBD7 /* LaunchScreen.storyboard in Resources */,
-				30B24A9C265E662100BF2D29 /* Local.xcconfig in Resources */,
 				30B24A9A265E541C00BF2D29 /* GoogleService-Info.plist in Resources */,
 				301179F1265E2738006ACBD7 /* Assets.xcassets in Resources */,
 				301179EF265E2737006ACBD7 /* Main.storyboard in Resources */,
@@ -259,7 +255,6 @@
 /* Begin XCBuildConfiguration section */
 		301179F6265E2738006ACBD7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30B24A9B265E662100BF2D29 /* Local.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
