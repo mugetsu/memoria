@@ -12,6 +12,9 @@
 		300F9041267E39BB00454816 /* Comfortaa-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 300F903C267E39BA00454816 /* Comfortaa-SemiBold.ttf */; };
 		300F9042267E39BB00454816 /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 300F903D267E39BB00454816 /* Comfortaa-Regular.ttf */; };
 		300F9043267E39BB00454816 /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 300F903E267E39BB00454816 /* Comfortaa-Bold.ttf */; };
+		308CE4B0267ECEE800DDBA30 /* Text++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308CE4AF267ECEE800DDBA30 /* Text++.swift */; };
+		308CE4B4267ED00F00DDBA30 /* TextButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308CE4B3267ED00F00DDBA30 /* TextButtonModifier.swift */; };
+		308CE4BB267ED57B00DDBA30 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308CE4BA267ED57B00DDBA30 /* TextFieldView.swift */; };
 		AD686FD924C9250800DF0376 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD686FD824C9250800DF0376 /* GoogleService-Info.plist */; };
 		AD686FDB24C9278400DF0376 /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD686FDA24C9278300DF0376 /* LandingPageView.swift */; };
 		AD686FE224C92A8A00DF0376 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD686FE124C92A8A00DF0376 /* SignUpView.swift */; };
@@ -33,6 +36,9 @@
 		300F903C267E39BA00454816 /* Comfortaa-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-SemiBold.ttf"; sourceTree = "<group>"; };
 		300F903D267E39BB00454816 /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
 		300F903E267E39BB00454816 /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
+		308CE4AF267ECEE800DDBA30 /* Text++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text++.swift"; sourceTree = "<group>"; };
+		308CE4B3267ED00F00DDBA30 /* TextButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButtonModifier.swift; sourceTree = "<group>"; };
+		308CE4BA267ED57B00DDBA30 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		3D114679342E8E81EC893150 /* Pods-memoria.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memoria.debug.xcconfig"; path = "Target Support Files/Pods-memoria/Pods-memoria.debug.xcconfig"; sourceTree = "<group>"; };
 		4375E912D3827A0512FC2318 /* Pods-memoria.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memoria.release.xcconfig"; path = "Target Support Files/Pods-memoria/Pods-memoria.release.xcconfig"; sourceTree = "<group>"; };
 		AD686FD824C9250800DF0376 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -74,6 +80,39 @@
 				300F903C267E39BA00454816 /* Comfortaa-SemiBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		308CE4AE267ECEC500DDBA30 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				308CE4AF267ECEE800DDBA30 /* Text++.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		308CE4B1267ECFC600DDBA30 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				308CE4B9267ED56900DDBA30 /* View */,
+				308CE4B2267ECFCC00DDBA30 /* Modifier */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		308CE4B2267ECFCC00DDBA30 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				308CE4B3267ED00F00DDBA30 /* TextButtonModifier.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
+		308CE4B9267ED56900DDBA30 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				308CE4BA267ED57B00DDBA30 /* TextFieldView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		4351177EC15E8856C910B9FF /* Frameworks */ = {
@@ -126,6 +165,8 @@
 		ADACC9F624C8E32B0057590B /* memoria */ = {
 			isa = PBXGroup;
 			children = (
+				308CE4B1267ECFC600DDBA30 /* Common */,
+				308CE4AE267ECEC500DDBA30 /* Extensions */,
 				300F9039267E398A00454816 /* Fonts */,
 				ADACC9FF24C8E32C0057590B /* Preview Content */,
 				ADACCA0524C8E32C0057590B /* Info.plist */,
@@ -271,7 +312,10 @@
 				AD686FE424C92A9600DF0376 /* LogInView.swift in Sources */,
 				AD686FEA24C9343900DF0376 /* SessionStore.swift in Sources */,
 				AD686FE624C92AB800DF0376 /* DashboardView.swift in Sources */,
+				308CE4BB267ED57B00DDBA30 /* TextFieldView.swift in Sources */,
+				308CE4B4267ED00F00DDBA30 /* TextButtonModifier.swift in Sources */,
 				AD686FE224C92A8A00DF0376 /* SignUpView.swift in Sources */,
+				308CE4B0267ECEE800DDBA30 /* Text++.swift in Sources */,
 				AD686FEC24C9351900DF0376 /* StartingView.swift in Sources */,
 				ADACC9F824C8E32B0057590B /* AppDelegate.swift in Sources */,
 				AD686FDB24C9278400DF0376 /* LandingPageView.swift in Sources */,

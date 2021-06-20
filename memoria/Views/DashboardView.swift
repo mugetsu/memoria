@@ -2,7 +2,7 @@
 //  DashboardView.swift
 //  memoria
 //
-//  Created by Randell Quitain on 6/20/21.
+//  Created by Randell Quitain on 20/6/21.
 //
 
 import SwiftUI
@@ -50,7 +50,7 @@ struct DashboardView: View {
     
     var body: some View {
         ZStack {
-            Color("kobi")
+            Color("ivory")
                 .edgesIgnoringSafeArea(.all)
             VStack(spacing: 20) {
                 if userName == nil {
@@ -58,11 +58,11 @@ struct DashboardView: View {
                 } else {
                     VStack(alignment: .leading, spacing: 0) {
                         Text("welcome")
-                            .font(.custom("Comfortaa-Medium", size: 42))
-                            .foregroundColor(Color("babyPowder"))
+                            .font(.custom("Comfortaa-light", size: 42))
+                            .foregroundColor(Color("gunMetal"))
                         Text(self.userName?.lowercased() ?? "")
-                            .font(.custom("Comfortaa-Light", size: 30))
-                            .foregroundColor(Color("richBlack"))
+                            .font(.custom("Comfortaa-Medium", size: 30))
+                            .foregroundColor(Color("gunMetal"))
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding()
@@ -100,17 +100,8 @@ struct DashboardView: View {
 //                }
                 Button(action: onLogOut) {
                     Text("log out")
-                        .font(.custom("Comfortaa-SemiBold", size: 16))
-                        .frame(width: 112, height: 44)
-                        .foregroundColor(Color("babyPowder"))
-                        .background(
-                            RoundedRectangle(cornerRadius: 24)
-                                .fill(Color("independence"))
-                        )
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 24)
-                                .stroke(Color("independence"), lineWidth: 1)
-                        )
+                        .kerning(-1)
+                        .textStyle(TextBButtonActiveStyle())
                 }
             }.onAppear(perform: fetchUser)
         }

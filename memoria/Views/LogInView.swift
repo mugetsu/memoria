@@ -2,7 +2,7 @@
 //  LogInView.swift
 //  memoria
 //
-//  Created by Randell Quitain on 6/20/21.
+//  Created by Randell Quitain on 20/6/21.
 //
 
 import SwiftUI
@@ -30,40 +30,32 @@ struct LogInView: View {
     var body: some View {
         if error != nil {
             Text(error ?? "There was an issue, please try again.")
-                .foregroundColor(.red)
+                .foregroundColor(Color("blush"))
         }
         ZStack {
-            Color("kobi")
+            Color("ivory")
                 .edgesIgnoringSafeArea(.all)
             VStack(spacing: 20) {
                 TextField("email", text: $email)
                     .font(.custom("Comfortaa-SemiBold", size: 21))
-                    .foregroundColor(Color("richBlack"))
+                    .foregroundColor(Color("gunMetal"))
                     .padding()
-                    .frame(width:320)
-                    .background(Color("babyPowder"))
+                    .frame(width: 320)
+                    .background(Color("timberWolf"))
                     .cornerRadius(24)
                     .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                 SecureField("password", text: $password)
                     .font(.custom("Comfortaa-SemiBold", size: 21))
-                    .foregroundColor(Color("richBlack"))
+                    .foregroundColor(Color("gunMetal"))
                     .padding()
-                    .frame(width:320)
-                    .background(Color("babyPowder"))
+                    .frame(width: 320)
+                    .background(Color("timberWolf"))
                     .cornerRadius(24)
                 Button(action: onLogIn) {
                     Text("log in")
-                        .font(.custom("Comfortaa-SemiBold", size: 21))
-                        .frame(width: 132, height: 50)
-                        .foregroundColor(Color("babyPowder"))
-                        .background(
-                            RoundedRectangle(cornerRadius: 24)
-                                .fill(Color("independence"))
-                        )
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 24)
-                                .stroke(Color("independence"), lineWidth: 1)
-                        )
+                        .kerning(-1)
+                        .textStyle(TextBButtonActiveStyle())
+                        .padding()
                 }
             }.padding()
         }
