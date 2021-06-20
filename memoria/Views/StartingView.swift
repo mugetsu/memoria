@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StartingView: View {
     
-    @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var session: FirebaseSession
     
     func getUser() {
         session.listen()

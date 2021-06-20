@@ -1,5 +1,5 @@
 //
-//  SessionStore.swift
+//  FirebaseSession.swift
 //  memoria
 //
 //  Created by Randell Quitain on 20/6/21.
@@ -7,14 +7,17 @@
 
 import SwiftUI
 import Firebase
-import Combine
+import FirebaseAuth
+import FirebaseDatabase
 
-class SessionStore: ObservableObject {
+class FirebaseSession: ObservableObject {
     
-    var didChange = PassthroughSubject<SessionStore, Never>()
     var handle: AuthStateDidChangeListenerHandle?
     
     @Published var sessionUID: String?
+    @Published var reminders = [Reminder]()
+    
+    var ref: DatabaseReference = Database.database().reference(withPath: "\(String(describing: Auth.auth().currentUser?.uid ?? "invaliduser"))")
     
     func listen() {
         // monitor authentication changes using firebase
@@ -23,7 +26,7 @@ class SessionStore: ObservableObject {
                 // if we have a user, create a new user model
                 print("Got user: \(user)")
                 self.sessionUID = user.uid
-                
+                self.getReminders()
             } else {
                 // if we don't have a user, set our session to nil
                 self.sessionUID = nil
@@ -31,19 +34,11 @@ class SessionStore: ObservableObject {
         }
     }
     
-    func signUp(
-        email: String,
-        password: String,
-        handler: @escaping AuthDataResultCallback
-    ) {
+    func signUp(email: String, password: String, handler: @escaping AuthDataResultCallback) {
         Auth.auth().createUser(withEmail: email, password: password, completion: handler)
     }
     
-    func signIn(
-        email: String,
-        password: String,
-        handler: @escaping AuthDataResultCallback
-    ) {
+    func signIn(email: String, password: String, handler: @escaping AuthDataResultCallback) {
         Auth.auth().signIn(withEmail: email, password: password, completion: handler)
     }
     
@@ -57,11 +52,15 @@ class SessionStore: ObservableObject {
         }
     }
     
-    func unbind() {
-        if let handle = handle {
-            Auth.auth().removeStateDidChangeListener(handle)
+    func getReminders() {
+        ref.observe(DataEventType.value) { snapshot in
+            self.reminders = []
+            for child in snapshot.children {
+                if let snapshot = child as? DataSnapshot,
+                    let reminder = Reminder(snapshot: snapshot) {
+                    self.reminders.append(reminder)
+                }
+            }
         }
     }
-    
-    // additional methods (sign up, sign in) will go here
 }

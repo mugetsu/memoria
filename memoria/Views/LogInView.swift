@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LogInView: View {
     
-    @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var session: FirebaseSession
     
     @State private var email = ""
     @State private var password = ""
@@ -44,6 +44,7 @@ struct LogInView: View {
                     .background(Color("timberWolf"))
                     .cornerRadius(24)
                     .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                    .disableAutocorrection(true)
                 SecureField("password", text: $password)
                     .font(.custom("Comfortaa-SemiBold", size: 21))
                     .foregroundColor(Color("gunMetal"))

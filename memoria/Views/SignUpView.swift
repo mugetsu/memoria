@@ -10,9 +10,9 @@ import Firebase
 
 struct SignUpView: View {
     
-    @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var session: FirebaseSession
     
-    @State private var name = ""
+    @State private var displayName = ""
     @State private var email = ""
     @State private var password = ""
     @State private var error: String? = nil
@@ -24,12 +24,14 @@ struct SignUpView: View {
                 self.error = error?.localizedDescription
             } else {
                 let db = Firestore.firestore()
-                db.collection("users").document(result!.user.uid).setData(["name":name,"email":email,"uid":result!.user.uid]) { (error) in
+                db.collection("users")
+                    .document(result!.user.uid)
+                    .setData(["displayName": displayName, "email": email, "uid" :result!.user.uid]) { error in
                     if error != nil {
                         self.error = error?.localizedDescription ?? "An unknown error occurred"
                     }
                 }
-                self.name = ""
+                self.displayName = ""
                 self.email = ""
                 self.password = ""
             }   
@@ -45,7 +47,7 @@ struct SignUpView: View {
             Color("ivory")
                 .edgesIgnoringSafeArea(.all)
             VStack(spacing: 20) {
-                TextField("nickname", text: $name)
+                TextField("nickname", text: $displayName)
                     .font(.custom("Comfortaa-SemiBold", size: 21))
                     .foregroundColor(Color("gunMetal"))
                     .padding()

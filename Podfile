@@ -12,6 +12,6 @@ pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'Firebase/Core'
 pod 'FirebaseFirestoreSwift'
-
+pod 'Firebase/Database'
 
 end
