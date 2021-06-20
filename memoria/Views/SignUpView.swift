@@ -2,7 +2,7 @@
 //  SignUpView.swift
 //  memoria
 //
-//  Created by Randell Quitain on 6/20/21.
+//  Created by Randell Quitain on 20/6/21.
 //
 
 import SwiftUI
@@ -10,9 +10,9 @@ import Firebase
 
 struct SignUpView: View {
     
-    @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var session: FirebaseSession
     
-    @State private var name = ""
+    @State private var displayName = ""
     @State private var email = ""
     @State private var password = ""
     @State private var error: String? = nil
@@ -24,12 +24,14 @@ struct SignUpView: View {
                 self.error = error?.localizedDescription
             } else {
                 let db = Firestore.firestore()
-                db.collection("users").document(result!.user.uid).setData(["name":name,"email":email,"uid":result!.user.uid]) { (error) in
+                db.collection("users")
+                    .document(result!.user.uid)
+                    .setData(["displayName": displayName, "email": email, "uid" :result!.user.uid]) { error in
                     if error != nil {
                         self.error = error?.localizedDescription ?? "An unknown error occurred"
                     }
                 }
-                self.name = ""
+                self.displayName = ""
                 self.email = ""
                 self.password = ""
             }   
@@ -39,47 +41,39 @@ struct SignUpView: View {
     var body: some View {
         if error != nil {
             Text(error ?? "There was an issue, please try again.")
-                .foregroundColor(.red)
+                .foregroundColor(Color("blush"))
         }
         ZStack {
-            Color("kobi")
+            Color("ivory")
                 .edgesIgnoringSafeArea(.all)
             VStack(spacing: 20) {
-                TextField("name", text: $name)
+                TextField("nickname", text: $displayName)
                     .font(.custom("Comfortaa-SemiBold", size: 21))
-                    .foregroundColor(Color("richBlack"))
+                    .foregroundColor(Color("gunMetal"))
                     .padding()
-                    .frame(width:320)
-                    .background(Color("babyPowder"))
+                    .frame(width: 320)
+                    .background(Color("timberWolf"))
                     .cornerRadius(24)
                 TextField("email", text: $email)
                     .font(.custom("Comfortaa-SemiBold", size: 21))
-                    .foregroundColor(Color("richBlack"))
+                    .foregroundColor(Color("gunMetal"))
                     .padding()
-                    .frame(width:320)
-                    .background(Color("babyPowder"))
+                    .frame(width: 320)
+                    .background(Color("timberWolf"))
                     .cornerRadius(24)
                     .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                 SecureField("password", text: $password)
                     .font(.custom("Comfortaa-SemiBold", size: 21))
-                    .foregroundColor(Color("richBlack"))
+                    .foregroundColor(Color("gunMetal"))
                     .padding()
-                    .frame(width:320)
-                    .background(Color("babyPowder"))
+                    .frame(width: 320)
+                    .background(Color("timberWolf"))
                     .cornerRadius(24)
                 Button(action: onSignUp) {
                     Text("sign up")
-                        .font(.custom("Comfortaa-SemiBold", size: 21))
-                        .frame(width: 132, height: 50)
-                        .foregroundColor(Color("richBlack"))
-                        .background(
-                            RoundedRectangle(cornerRadius: 24)
-                                .fill(Color("babyPowder"))
-                        )
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 24)
-                                .stroke(Color("babyPowder"), lineWidth: 1)
-                        )
+                        .kerning(-1)
+                        .textStyle(TextBButtonActiveStyle())
+                        .padding()
                 }
             }.padding()
         }

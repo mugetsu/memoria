@@ -2,7 +2,7 @@
 //  LandingPageView.swift
 //  memoria
 //
-//  Created by Randell Quitain on 6/20/21.
+//  Created by Randell Quitain on 20/6/21.
 //
 
 import SwiftUI
@@ -11,43 +11,26 @@ struct LandingPageView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color("kobi")
+                Color("ivory")
                     .edgesIgnoringSafeArea(.all)
-                VStack(spacing: 20) {
+                VStack(spacing: 16) {
                     Text("memoria")
                         .font(.custom("Comfortaa-Bold", size: 42))
-                        .foregroundColor(Color("babyPowder"))
+                        .foregroundColor(Color("gunMetal"))
+                        .padding()
                     NavigationLink(destination: LogInView()) {
                         Text("log in")
-                            .font(.custom("Comfortaa-SemiBold", size: 21))
-                            .frame(width: 180, height: 50)
-                            .foregroundColor(Color("babyPowder"))
-                            .background(
-                                RoundedRectangle(cornerRadius: 24)
-                                    .fill(Color("independence"))
-                            )
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 24)
-                                    .stroke(Color("independence"), lineWidth: 1)
-                            )
+                            .kerning(-1)
+                            .textStyle(TextBButtonActiveStyle())
                     }
                     NavigationLink(destination: SignUpView()) {
                         Text("sign up")
-                            .font(.custom("Comfortaa-SemiBold", size: 21))
-                            .frame(width: 180, height: 50)
-                            .foregroundColor(Color("richBlack"))
-                            .background(
-                                RoundedRectangle(cornerRadius: 24)
-                                    .fill(Color("babyPowder"))
-                            )
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 24)
-                                    .stroke(Color("babyPowder"), lineWidth: 1)
-                            )
+                            .kerning(-1)
+                            .textStyle(TextBButtonDefaultStyle())
                     }
                 }
             }
-        }.accentColor(Color("richBlack"))
+        }.accentColor(Color("carolinaBlue"))
     }
 }
 

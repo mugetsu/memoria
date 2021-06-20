@@ -2,14 +2,14 @@
 //  StartingView.swift
 //  memoria
 //
-//  Created by Randell Quitain on 6/20/21.
+//  Created by Randell Quitain on 20/6/21.
 //
 
 import SwiftUI
 
 struct StartingView: View {
     
-    @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var session: FirebaseSession
     
     func getUser() {
         session.listen()

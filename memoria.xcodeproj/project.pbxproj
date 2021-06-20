@@ -12,12 +12,18 @@
 		300F9041267E39BB00454816 /* Comfortaa-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 300F903C267E39BA00454816 /* Comfortaa-SemiBold.ttf */; };
 		300F9042267E39BB00454816 /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 300F903D267E39BB00454816 /* Comfortaa-Regular.ttf */; };
 		300F9043267E39BB00454816 /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 300F903E267E39BB00454816 /* Comfortaa-Bold.ttf */; };
+		308CE4B0267ECEE800DDBA30 /* Text++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308CE4AF267ECEE800DDBA30 /* Text++.swift */; };
+		308CE4B4267ED00F00DDBA30 /* TextButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308CE4B3267ED00F00DDBA30 /* TextButtonModifier.swift */; };
+		308CE4BB267ED57B00DDBA30 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308CE4BA267ED57B00DDBA30 /* TextFieldView.swift */; };
+		308CE4C3267EE2DB00DDBA30 /* ReminderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308CE4C2267EE2DB00DDBA30 /* ReminderList.swift */; };
+		308CE4C5267EE37300DDBA30 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308CE4C4267EE37300DDBA30 /* Reminder.swift */; };
+		308CE4CA267EEBE900DDBA30 /* ReminderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308CE4C9267EEBE900DDBA30 /* ReminderCell.swift */; };
 		AD686FD924C9250800DF0376 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD686FD824C9250800DF0376 /* GoogleService-Info.plist */; };
 		AD686FDB24C9278400DF0376 /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD686FDA24C9278300DF0376 /* LandingPageView.swift */; };
 		AD686FE224C92A8A00DF0376 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD686FE124C92A8A00DF0376 /* SignUpView.swift */; };
 		AD686FE424C92A9600DF0376 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD686FE324C92A9600DF0376 /* LogInView.swift */; };
 		AD686FE624C92AB800DF0376 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD686FE524C92AB800DF0376 /* DashboardView.swift */; };
-		AD686FEA24C9343900DF0376 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD686FE924C9343900DF0376 /* SessionStore.swift */; };
+		AD686FEA24C9343900DF0376 /* FirebaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD686FE924C9343900DF0376 /* FirebaseSession.swift */; };
 		AD686FEC24C9351900DF0376 /* StartingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD686FEB24C9351900DF0376 /* StartingView.swift */; };
 		ADACC9F824C8E32B0057590B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADACC9F724C8E32B0057590B /* AppDelegate.swift */; };
 		ADACC9FA24C8E32B0057590B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADACC9F924C8E32B0057590B /* SceneDelegate.swift */; };
@@ -33,6 +39,12 @@
 		300F903C267E39BA00454816 /* Comfortaa-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-SemiBold.ttf"; sourceTree = "<group>"; };
 		300F903D267E39BB00454816 /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
 		300F903E267E39BB00454816 /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
+		308CE4AF267ECEE800DDBA30 /* Text++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text++.swift"; sourceTree = "<group>"; };
+		308CE4B3267ED00F00DDBA30 /* TextButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButtonModifier.swift; sourceTree = "<group>"; };
+		308CE4BA267ED57B00DDBA30 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		308CE4C2267EE2DB00DDBA30 /* ReminderList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderList.swift; sourceTree = "<group>"; };
+		308CE4C4267EE37300DDBA30 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		308CE4C9267EEBE900DDBA30 /* ReminderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCell.swift; sourceTree = "<group>"; };
 		3D114679342E8E81EC893150 /* Pods-memoria.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memoria.debug.xcconfig"; path = "Target Support Files/Pods-memoria/Pods-memoria.debug.xcconfig"; sourceTree = "<group>"; };
 		4375E912D3827A0512FC2318 /* Pods-memoria.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memoria.release.xcconfig"; path = "Target Support Files/Pods-memoria/Pods-memoria.release.xcconfig"; sourceTree = "<group>"; };
 		AD686FD824C9250800DF0376 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -40,7 +52,7 @@
 		AD686FE124C92A8A00DF0376 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		AD686FE324C92A9600DF0376 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		AD686FE524C92AB800DF0376 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
-		AD686FE924C9343900DF0376 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		AD686FE924C9343900DF0376 /* FirebaseSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSession.swift; sourceTree = "<group>"; };
 		AD686FEB24C9351900DF0376 /* StartingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingView.swift; sourceTree = "<group>"; };
 		ADACC9F424C8E32B0057590B /* memoria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memoria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADACC9F724C8E32B0057590B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +86,81 @@
 				300F903C267E39BA00454816 /* Comfortaa-SemiBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		308CE4AE267ECEC500DDBA30 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				308CE4AF267ECEE800DDBA30 /* Text++.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		308CE4B1267ECFC600DDBA30 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				308CE4B9267ED56900DDBA30 /* View */,
+				308CE4B2267ECFCC00DDBA30 /* Modifier */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		308CE4B2267ECFCC00DDBA30 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				308CE4B3267ED00F00DDBA30 /* TextButtonModifier.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
+		308CE4B9267ED56900DDBA30 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				308CE4BA267ED57B00DDBA30 /* TextFieldView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		308CE4BE267EE20B00DDBA30 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				308CE4BF267EE21200DDBA30 /* Reminder */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		308CE4BF267EE21200DDBA30 /* Reminder */ = {
+			isa = PBXGroup;
+			children = (
+				308CE4C1267EE27C00DDBA30 /* Views */,
+				308CE4C0267EE22100DDBA30 /* Models */,
+			);
+			path = Reminder;
+			sourceTree = "<group>";
+		};
+		308CE4C0267EE22100DDBA30 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				308CE4C4267EE37300DDBA30 /* Reminder.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		308CE4C1267EE27C00DDBA30 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				308CE4C2267EE2DB00DDBA30 /* ReminderList.swift */,
+				308CE4C9267EEBE900DDBA30 /* ReminderCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		308CE4D0267F188100DDBA30 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				AD686FE924C9343900DF0376 /* FirebaseSession.swift */,
+			);
+			path = Session;
 			sourceTree = "<group>";
 		};
 		4351177EC15E8856C910B9FF /* Frameworks */ = {
@@ -126,6 +213,10 @@
 		ADACC9F624C8E32B0057590B /* memoria */ = {
 			isa = PBXGroup;
 			children = (
+				308CE4D0267F188100DDBA30 /* Session */,
+				308CE4BE267EE20B00DDBA30 /* Features */,
+				308CE4B1267ECFC600DDBA30 /* Common */,
+				308CE4AE267ECEC500DDBA30 /* Extensions */,
 				300F9039267E398A00454816 /* Fonts */,
 				ADACC9FF24C8E32C0057590B /* Preview Content */,
 				ADACCA0524C8E32C0057590B /* Info.plist */,
@@ -134,7 +225,6 @@
 				ADACC9F724C8E32B0057590B /* AppDelegate.swift */,
 				ADACC9F924C8E32B0057590B /* SceneDelegate.swift */,
 				ADACCA0224C8E32C0057590B /* LaunchScreen.storyboard */,
-				AD686FE924C9343900DF0376 /* SessionStore.swift */,
 				AD686FE024C92A1000DF0376 /* Views */,
 			);
 			path = memoria;
@@ -269,10 +359,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD686FE424C92A9600DF0376 /* LogInView.swift in Sources */,
-				AD686FEA24C9343900DF0376 /* SessionStore.swift in Sources */,
+				AD686FEA24C9343900DF0376 /* FirebaseSession.swift in Sources */,
 				AD686FE624C92AB800DF0376 /* DashboardView.swift in Sources */,
+				308CE4BB267ED57B00DDBA30 /* TextFieldView.swift in Sources */,
+				308CE4B4267ED00F00DDBA30 /* TextButtonModifier.swift in Sources */,
 				AD686FE224C92A8A00DF0376 /* SignUpView.swift in Sources */,
+				308CE4B0267ECEE800DDBA30 /* Text++.swift in Sources */,
 				AD686FEC24C9351900DF0376 /* StartingView.swift in Sources */,
+				308CE4C3267EE2DB00DDBA30 /* ReminderList.swift in Sources */,
+				308CE4C5267EE37300DDBA30 /* Reminder.swift in Sources */,
+				308CE4CA267EEBE900DDBA30 /* ReminderCell.swift in Sources */,
 				ADACC9F824C8E32B0057590B /* AppDelegate.swift in Sources */,
 				AD686FDB24C9278400DF0376 /* LandingPageView.swift in Sources */,
 				ADACC9FA24C8E32B0057590B /* SceneDelegate.swift in Sources */,
