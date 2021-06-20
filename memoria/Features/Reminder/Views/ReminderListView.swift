@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-struct ReminderList: View {
+struct ReminderListView: View {
     
     @EnvironmentObject var session: FirebaseSession
+    @ObservedObject var reminderListVM = ReminderListViewModel()
+    @State var presentAddNewItem = false
     
     var body: some View {
         ZStack {
@@ -17,12 +19,17 @@ struct ReminderList: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 List {
-                    ForEach (self.session.reminders) { reminder in
-                        ReminderCell(reminder: reminder)
-                            .listRowBackground(Color("ivory"))
+                    ForEach(reminderListVM.reminderCellViewModels) { reminderCellVM in
+                        ReminderCell(reminderCellVM: reminderCellVM)
+                    }
+                    if presentAddNewItem {
+                        ReminderCell(reminderCellVM: ReminderCellViewModel(reminder: Reminder(id: "", title: "", description: "", uid: ""))) { reminder in
+                            self.reminderListVM.addReminder(reminder: reminder)
+                            self.presentAddNewItem.toggle()
+                        }
                     }
                 }
-                Button(action: {}) {
+                Button(action: { presentAddNewItem.toggle() }) {
                     HStack {
                         Text("new reminder")
                     }
@@ -44,6 +51,6 @@ struct ReminderList: View {
 
 struct ReminderList_Previews: PreviewProvider {
     static var previews: some View {
-        ReminderList()
+        ReminderListView()
     }
 }
