@@ -26,7 +26,7 @@ struct SignUpView: View {
                 let db = Firestore.firestore()
                 db.collection("users")
                     .document(result!.user.uid)
-                    .setData(["displayName": displayName, "email": email, "uid" :result!.user.uid]) { error in
+                    .setData(["displayName": displayName, "email": email, "uid": result!.user.uid]) { error in
                     if error != nil {
                         self.error = error?.localizedDescription ?? "An unknown error occurred"
                     }
